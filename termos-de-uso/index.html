@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termos de Uso · Órbi solo</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.11.0/dist/tabler-icons.min.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --iris:#534AB7;--lav:#7F77DD;--ser:#1D9E75;--amb:#EF9F27;
+    --creme:#F1EFE8;--tinta:#28243D;--cinza:#6F6B84;--lilas:#EDEBFA;
+    --branco:#FFFFFF;--border:rgba(83,74,183,.15);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--creme);color:var(--tinta);overflow-x:hidden;line-height:1.6}
+  h1,h2,h3,h4{font-family:'Nunito',sans-serif}
+  a{color:inherit;text-decoration:none}
+  .btn{text-decoration:none!important}
+  img{max-width:100%}
+
+  /* BOTÕES */
+  .btn{font-family:'Nunito',sans-serif;font-weight:700;border-radius:14px;cursor:pointer;
+    text-decoration:none;display:inline-flex;align-items:center;justify-content:center;
+    gap:8px;border:none;transition:transform .18s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-iris{background:var(--iris);color:#fff;padding:.85rem 1.6rem;font-size:1rem}
+  .btn-iris:hover{box-shadow:0 8px 22px rgba(83,74,183,.38)}
+  .btn-lilas{background:var(--lilas);color:var(--iris);padding:.85rem 1.5rem;font-size:1rem;border:1.5px solid rgba(83,74,183,.2)}
+  .btn-white{background:#fff;color:var(--iris);padding:.85rem 1.6rem;font-size:1rem}
+  .btn-white:hover{box-shadow:0 8px 22px rgba(0,0,0,.16)}
+  .btn-outline-white{background:transparent;color:#fff;padding:.82rem 1.5rem;font-size:1rem;border:1.5px solid rgba(255,255,255,.35)}
+  .btn-outline-white:hover{background:rgba(255,255,255,.1)}
+
+  /* NAV */
+  #navbar{position:sticky;top:0;z-index:100;height:64px;display:flex;align-items:center;gap:2rem;
+    padding:0 6%;background:var(--branco);border-bottom:1px solid rgba(83,74,183,.1);
+    transition:box-shadow .3s}
+  #navbar.scrolled{box-shadow:0 4px 18px rgba(83,74,183,.1)}
+  .nav-logo{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+  .nav-logo .mark{width:28px;height:28px;display:block}.nav-logo .mark svg{width:100%;height:100%}
+  .nav-logo .w-orbi{font-size:1.32rem;font-weight:800;color:var(--tinta);letter-spacing:-.04em;line-height:1}
+  .nav-logo .w-solo{font-size:1.32rem;font-weight:900;color:var(--iris);letter-spacing:-.04em;line-height:1;margin-left:.04em}
+  .nav-links{display:flex;gap:2rem;list-style:none;flex:1;justify-content:center}
+  .nav-links a{font-size:.92rem;font-weight:700;color:var(--cinza);transition:color .2s}
+  .nav-links a:hover{color:var(--tinta)}
+  .nav-right{display:flex;align-items:center;gap:1rem;flex-shrink:0}
+  .nav-entrar{font-size:.92rem;font-weight:700;color:var(--tinta)}
+  #navbar .btn{padding:.6rem 1.2rem;font-size:.88rem}
+
+  /* HERO: fundo iris solido */
+  .hero{background:var(--iris);min-height:100vh;display:flex;align-items:center;padding:0 6%}
+  .hero-inner{max-width:1180px;width:100%;margin:0 auto;display:grid;
+    grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:80px 0 60px}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;font-weight:700;
+    color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
+  .hero h1{font-size:clamp(2.3rem,3.2vw,3.2rem);font-weight:900;line-height:1.08;
+    color:#fff;margin-bottom:1.2rem;letter-spacing:-.04em}
+  .rabs{position:relative;display:inline-block}
+  .hero-desc{font-size:1.05rem;font-weight:600;color:rgba(255,255,255,.75);line-height:1.72;margin-bottom:2rem;max-width:460px}
+  .hero-acts{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+  .hero-trust{font-size:.88rem;font-weight:700;color:rgba(255,255,255,.58);margin-top:.5rem}
+
+  /* NOTIF CARDS */
+  .notif-col{display:flex;flex-direction:column;gap:.8rem}
+  .notif{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:16px;
+    padding:.85rem 1rem;display:flex;align-items:center;gap:.9rem;
+    backdrop-filter:blur(8px);transition:background .2s}
+  .notif:hover{background:rgba(255,255,255,.16)}
+  .notif-ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;
+    justify-content:center;font-size:1.1rem;flex-shrink:0}
+  .notif-ic.ser{background:rgba(29,158,117,.25);color:#6FDDAD}
+  .notif-ic.iris{background:rgba(255,255,255,.18);color:#fff}
+  .notif-ic.amb{background:rgba(239,159,39,.25);color:#FFD97D}
+  .notif-ic.lav{background:rgba(127,119,221,.35);color:#C4C0F8}
+  .notif-title{font-size:.88rem;font-weight:800;color:#fff;line-height:1.2}
+  .notif-sub{font-size:.76rem;font-weight:600;color:rgba(255,255,255,.55);margin-top:.1rem}
+
+  /* SEÇÕES */
+  section{padding:88px 6%}
+  .inner{max-width:1120px;margin:0 auto}
+  .sec-eyebrow{display:flex;align-items:center;gap:.7rem;font-size:.72rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--iris);margin-bottom:.7rem}
+  .sec-eyebrow::before{content:'';display:inline-block;width:28px;height:2px;background:var(--iris)}
+  .sec-title{font-size:clamp(1.75rem,3vw,2.4rem);font-weight:900;color:var(--tinta);
+    line-height:1.15;margin-bottom:.8rem;letter-spacing:-.03em}
+  .sec-title .rabs{position:relative;display:inline}
+  .sec-lead{font-size:1rem;font-weight:600;color:var(--cinza);max-width:580px;line-height:1.65;margin-bottom:2.4rem}
+  .center{text-align:center}.center .sec-lead{margin-inline:auto}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s,transform .55s}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* DOR */
+  .dor{background:var(--branco)}
+  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
+  .pain-card{background:var(--creme);border-radius:18px;padding:1.5rem;border-top:4px solid var(--iris)}
+  .pain-card.c-ser{border-color:var(--ser)}
+  .pain-card.c-amb{border-color:var(--amb)}
+  .pain-card.c-lav{border-color:var(--lav)}
+  .pain-ic{width:44px;height:44px;border-radius:14px;background:var(--lilas);color:var(--iris);
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1rem}
+  .pain-card.c-ser .pain-ic{background:#E2F3EC;color:var(--ser)}
+  .pain-card.c-amb .pain-ic{background:#FCF0DC;color:var(--amb)}
+  .pain-card.c-lav .pain-ic{background:#EEEAFA;color:var(--lav)}
+  .pain-card h4{font-size:1.05rem;font-weight:900;color:var(--tinta);margin-bottom:.45rem}
+  .pain-card p{font-size:.92rem;font-weight:600;color:var(--cinza);line-height:1.65}
+
+  /* FUNCIONALIDADES */
+  .func{background:var(--creme)}
+  .func-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:0}
+  .fcard{background:var(--branco);border-radius:18px;padding:1.5rem;
+    border-top:4px solid var(--iris);transition:transform .2s,box-shadow .2s}
+  .fcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(83,74,183,.12)}
+  .fcard.c-ser{border-color:var(--ser)}
+  .fcard.c-amb{border-color:var(--amb)}
+  .fcard.c-lav{border-color:var(--lav)}
+  .fcard-ic{width:44px;height:44px;border-radius:14px;background:var(--lilas);color:var(--iris);
+    display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.9rem}
+  .fcard.c-ser .fcard-ic{background:#E2F3EC;color:var(--ser)}
+  .fcard.c-amb .fcard-ic{background:#FCF0DC;color:var(--amb)}
+  .fcard.c-lav .fcard-ic{background:#EEEAFA;color:var(--lav)}
+  .fcard h4{font-size:1.05rem;font-weight:900;color:var(--tinta);margin-bottom:.4rem}
+  .fcard .fcat{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--iris);margin-bottom:.4rem;display:block}
+  .fcard.c-ser .fcat{color:var(--ser)}
+  .fcard.c-amb .fcat{color:var(--amb)}
+  .fcard.c-lav .fcat{color:var(--lav)}
+  .fcard p{font-size:.88rem;font-weight:600;color:var(--cinza);line-height:1.6}
+
+  /* STRIP */
+  .strip{background:var(--branco);border-top:1px solid rgba(83,74,183,.1);
+    border-bottom:1px solid rgba(83,74,183,.1);padding:1.6rem 6%}
+  .strip-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;
+    justify-content:center;gap:2.4rem;flex-wrap:wrap}
+  .strip-item{display:flex;align-items:center;gap:8px;font-size:.95rem;font-weight:700;color:var(--tinta)}
+  .strip-item i{font-size:1.1rem;color:var(--ser)}
+
+  /* PARA QUEM */
+  .quem{background:var(--iris)}
+  .quem .sec-eyebrow{color:rgba(255,255,255,.7)}
+  .quem .sec-eyebrow::before{background:rgba(255,255,255,.4)}
+  .quem .sec-title{color:#fff}
+  .quem .sec-lead{color:rgba(255,255,255,.72);max-width:100%}
+  .aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0}
+  .aud-main{grid-column:1/-1;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);
+    border-radius:18px;padding:1.8rem 2rem;display:flex;align-items:flex-start;gap:1.4rem}
+  .aud-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+    border-radius:18px;padding:1.7rem 1.6rem}
+  .aud-ic{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.18);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+  .aud-card .aud-ic{margin-bottom:.9rem}
+  .aud-tag{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(255,255,255,.55);display:block;margin-bottom:.3rem}
+  .aud h4{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.35rem}
+  .aud p{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.65);line-height:1.6}
+
+  /* PLANOS */
+  .planos{background:var(--branco)}
+  .plan-hero{background:var(--iris);border-radius:20px;padding:2rem 2.2rem;
+    display:grid;grid-template-columns:1.6fr 1fr;gap:2.4rem;align-items:center;
+    box-shadow:0 16px 40px rgba(83,74,183,.28);margin-bottom:2.8rem}
+  .ph-points{display:flex;flex-direction:column;gap:.7rem}
+  .ph-points span{display:flex;align-items:center;gap:.65rem;font-size:.92rem;
+    font-weight:700;color:rgba(255,255,255,.9)}
+  .ph-points i{color:rgba(255,255,255,.7);font-size:1.1rem;flex-shrink:0}
+  .ph-cta{border-left:1px solid rgba(255,255,255,.2);padding-left:2rem;display:flex;
+    flex-direction:column;gap:.9rem;align-items:flex-start}
+  .ph-trial{font-size:.9rem;font-weight:700;color:rgba(255,255,255,.8);line-height:1.5}
+  .ph-trial b{color:#fff}
+  .toggle{display:inline-flex;background:var(--creme);border:1px solid rgba(83,74,183,.15);
+    border-radius:100px;padding:4px;gap:3px}
+  .tg-btn{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:700;color:var(--cinza);
+    background:transparent;border:none;padding:.5rem 1.2rem;border-radius:100px;cursor:pointer;transition:color .2s}
+  .tg-btn span{font-size:.7rem;font-weight:800;color:var(--ser);background:#E2F3EC;
+    padding:.1rem .42rem;border-radius:20px;margin-left:.3rem}
+  .tg-btn.active{background:var(--branco);color:var(--tinta);box-shadow:0 2px 8px rgba(83,74,183,.12)}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+    max-width:980px;margin:2rem auto 0}
+  .plan{background:var(--branco);border:1px solid rgba(83,74,183,.12);border-radius:18px;
+    padding:2rem 1.7rem;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .plan:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(83,74,183,.12)}
+  .plan.feat{border:2px solid var(--iris);position:relative}
+  .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--iris);color:#fff;font-size:.7rem;font-weight:800;
+    letter-spacing:.05em;text-transform:uppercase;padding:.32rem .9rem;border-radius:20px;
+    white-space:nowrap;font-family:'Nunito',sans-serif}
+  .plan-name{font-size:1.1rem;font-weight:800;color:var(--tinta);margin-bottom:.4rem}
+  .plan-desc{font-size:.84rem;font-weight:600;color:var(--cinza);line-height:1.5;min-height:40px;margin-bottom:1rem}
+  .plan-price{display:flex;align-items:baseline;gap:2px;margin-bottom:.3rem}
+  .plan-price .cur{font-size:.95rem;font-weight:700;color:var(--tinta)}
+  .plan-amount{font-size:2.2rem;font-weight:900;color:var(--tinta);line-height:1}
+  .plan-price .per{font-size:.88rem;font-weight:600;color:var(--cinza)}
+  .plan-cycle-note{display:none;font-size:.72rem;font-weight:600;color:var(--cinza);margin-bottom:.8rem}
+  .plan.is-anual .plan-cycle-note{display:block}
+  .plan-sessions{font-size:.84rem;font-weight:700;color:var(--iris);
+    background:var(--lilas);padding:.38rem .8rem;border-radius:100px;
+    display:inline-flex;align-items:center;gap:6px;margin:.7rem 0 0}
+  hr.plan-div{border:none;border-top:1px solid rgba(83,74,183,.1);margin:1.1rem 0}
+  .plan .btn{width:100%;padding:.88rem;font-size:.95rem;margin-top:1.6rem}
+  .plan-included{display:flex;align-items:center;justify-content:center;gap:6px;
+    font-size:.78rem;font-weight:700;color:var(--cinza);margin-top:.9rem}
+  .plan-included i{color:var(--ser)}
+  .shared-feats{max-width:920px;margin:2.6rem auto 0;border-top:1px solid rgba(83,74,183,.1);padding-top:2.2rem}
+  .sf-head{display:flex;align-items:center;justify-content:center;gap:8px;
+    font-weight:800;font-size:1rem;color:var(--tinta);margin-bottom:1.8rem}
+  .sf-head i{color:var(--iris)}
+  .sf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:0 auto}
+  .sf-item{display:flex;align-items:flex-start;gap:.7rem;font-size:.92rem;font-weight:700;
+    color:var(--tinta);background:var(--creme);border-radius:12px;padding:.85rem 1rem;line-height:1.4}
+  .sf-item i{color:var(--ser);font-size:1.15rem;flex-shrink:0;margin-top:.08rem}
+
+  /* SEGURANÇA */
+  .seg{background:var(--iris)}
+  .seg .sec-eyebrow{color:rgba(255,255,255,.7)}
+  .seg .sec-eyebrow::before{background:rgba(255,255,255,.4)}
+  .seg .sec-title{color:#fff}
+  .seg .sec-lead{color:rgba(255,255,255,.72);max-width:100%}
+  .seg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:0;max-width:860px;margin-inline:auto}
+  .seg-item{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);
+    border-radius:18px;padding:1.6rem 1.4rem;display:flex;align-items:center;
+    text-align:left;gap:1rem}
+  .seg-ic{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.18);
+    color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+  .seg-item span{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.9);line-height:1.45}
+
+  /* CITAÇÃO */
+  .quote{background:var(--tinta);text-align:center;padding:100px 6%}
+  .quote-inner{max-width:760px;margin:0 auto}
+  .quote-mark{font-size:2.8rem;color:var(--lav);line-height:1;margin-bottom:.5rem}
+  .quote-text{font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:800;color:#fff;line-height:1.55;margin-bottom:1.4rem}
+  .quote-attr{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.45)}
+
+  /* CTA FINAL */
+  .final{background:var(--iris);text-align:center;padding:100px 6%;position:relative;overflow:hidden}
+  .final-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .final-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
+  .fb1{width:360px;height:360px;background:rgba(29,158,117,.22);bottom:-100px;left:-80px}
+  .fb2{width:300px;height:300px;background:rgba(239,159,39,.18);top:-80px;right:-60px}
+  .final h2{font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:900;color:#fff;margin-bottom:1.4rem;letter-spacing:-.04em;line-height:1.2}
+  .final p{font-size:1.05rem;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:.4rem}
+  .final-sub{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:2rem;display:block}
+  .final-cta-big{font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.2;margin-bottom:2.2rem;display:block}
+  .final-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:.4rem}
+  .final-note{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.45);margin-bottom:2rem;display:block}
+
+  /* FOOTER */
+  footer{background:var(--tinta);padding:2.4rem 6%;color:rgba(255,255,255,.6)}
+  .foot-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;
+    justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  .foot-logo{display:flex;align-items:center;gap:.55rem}
+  .foot-mark{width:26px;height:26px}.foot-mark svg{width:100%;height:100%}
+  .foot-orbi{font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-.04em}
+  .foot-solo{font-size:1.1rem;font-weight:900;color:var(--lav);letter-spacing:-.04em;margin-left:.04em}
+  .foot-links{display:flex;gap:1.6rem;flex-wrap:wrap}
+  .foot-links a{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.5);transition:color .2s}
+  .foot-links a:hover{color:#fff}
+  .foot-copy{font-size:.82rem;font-weight:600}
+
+  /* STATUS CHIPS */
+  .chip{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;border-radius:100px;padding:.24rem .68rem}
+  .chip-ser{background:#E2F3EC;color:var(--ser)}
+  .chip-amb{background:#FCF0DC;color:#B97613}
+  .chip-lilas{background:var(--lilas);color:var(--iris)}
+
+  /* MOBILE */
+  @media(max-width:960px){
+    .func-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:860px){
+    .hero-inner{grid-template-columns:1fr;gap:2.4rem;padding-top:100px}
+    .notif-col{display:none}
+    .aud-grid{grid-template-columns:1fr}
+    .aud-main{grid-column:auto}
+    .plans{grid-template-columns:1fr}
+    .seg-grid{grid-template-columns:repeat(2,1fr)}
+    .nav-links{display:none}
+    .plan-hero{grid-template-columns:1fr}
+    .ph-cta{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.2);padding-top:1.2rem}
+  }
+  @media(max-width:620px){
+    .plans{grid-template-columns:1fr}.seg-grid{grid-template-columns:1fr}
+    .strip-inner{gap:1.2rem}
+  }
+  @prefers-reduced-motion:reduce{*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* PÁGINAS INTERNAS (legal) */
+.legal-hero{background:var(--iris);padding:64px 6% 48px;text-align:center}
+.legal-hero h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:.6rem}
+.legal-hero p{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.65)}
+.legal-wrap{max-width:760px;margin:0 auto;padding:56px 6% 80px}
+.legal-notice{background:#FCF0DC;border:1px solid rgba(239,159,39,.35);border-radius:14px;
+  padding:1.1rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start;margin-bottom:2.6rem}
+.legal-notice i{color:var(--amb);font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.legal-notice p{font-size:.88rem;font-weight:600;color:#7A4F0C;line-height:1.6}
+.legal-wrap h2{font-size:1.25rem;font-weight:900;color:var(--tinta);margin:2.2rem 0 .8rem;letter-spacing:-.02em}
+.legal-wrap h2:first-of-type{margin-top:0}
+.legal-wrap p{font-size:.95rem;font-weight:600;color:var(--cinza);line-height:1.75;margin-bottom:1rem}
+.legal-wrap ul{margin:0 0 1rem 1.2rem}
+.legal-wrap li{font-size:.95rem;font-weight:600;color:var(--cinza);line-height:1.75;margin-bottom:.4rem}
+.legal-wrap strong{color:var(--tinta)}
+.legal-back{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;
+  color:var(--iris);margin-bottom:1.6rem}
+.legal-updated{font-size:.82rem;font-weight:600;color:var(--cinza);margin-top:2.6rem;
+  padding-top:1.6rem;border-top:1px solid rgba(83,74,183,.12)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#534AB7"/><stop offset="1" stop-color="#7F77DD"/></linearGradient></defs>
+</svg>
+<nav id="navbar">
+  <a class="nav-logo" href="/">
+    <span class="mark"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M 19.4 55.4 L 18.4 54.8 L 17.4 54.0 L 16.5 53.3 L 15.7 52.4 L 14.9 51.5 L 14.2 50.6 L 13.5 49.6 L 12.9 48.6 L 12.3 47.5 L 11.8 46.4 L 11.3 45.3 L 10.8 44.1 L 10.5 42.9 L 10.2 41.7 L 9.9 40.5 L 9.7 39.2 L 9.6 37.9 L 9.8 36.7 L 10.0 35.4 L 10.2 34.2 L 10.6 32.9 L 10.9 31.7 L 11.3 30.5 L 11.8 29.3 L 12.4 28.2 L 12.9 27.0 L 13.6 25.9 L 14.3 24.8 L 15.0 23.7 L 15.8 22.7 L 16.6 21.7 L 17.5 20.7 L 18.4 19.8 L 19.4 18.9 L 20.4 18.1 L 21.4 17.3 L 22.5 16.5 L 23.6 15.8 L 24.7 15.1 L 25.9 14.5 L 27.1 13.9 L 28.3 13.4 L 29.5 12.9 L 30.8 12.5 L 32.1 12.1 L 33.4 11.8 L 34.7 11.5 L 36.0 11.3 L 37.3 11.1 L 38.6 11.0 L 39.9 11.0 L 41.3 11.0 L 42.6 11.1 L 43.9 11.2 L 45.2 11.4 L 46.5 11.6 L 47.8 11.9 L 49.1 12.2 L 50.4 12.6 L 51.6 13.0 L 52.8 13.5 L 54.0 14.1 L 55.2 14.7 L 56.3 15.3 L 57.4 16.0 L 58.5 16.7 L 59.5 17.5 L 60.5 18.3 L 61.5 19.2 L 62.4 20.1 L 63.3 21.0 L 64.1 22.0 L 64.9 23.0 L 65.7 24.0 L 66.4 25.1 L 67.0 26.2 L 67.6 27.3 L 68.1 28.5 L 68.5 29.7 L 68.9 30.9 L 69.2 32.1 L 69.4 33.3 L 69.6 34.6 L 69.8 35.8 L 69.8 37.1 L 69.9 38.3 L 69.8 39.5 L 69.7 40.8 L 69.6 42.0 L 69.4 43.2 L 69.1 44.4 L 68.8 45.6 L 68.4 46.8 L 68.0 48.0 L 67.5 49.1 L 67.0 50.2 L 66.5 51.3 L 65.8 52.4 L 65.2 53.4 L 64.5 54.4 L 63.7 55.4 L 62.9 56.4 L 62.1 57.3 L 61.2 58.1 L 60.3 59.0 L 59.3 59.7 L 58.4 60.5 L 57.3 61.2 L 56.3 61.9 L 55.2 62.5 L 54.2 63.0 L 53.0 63.6 L 51.9 64.0 L 50.8 64.5 L 49.6 64.8 L 48.4 65.2 L 47.2 65.4 L 46.0 65.7 L 44.9 65.8 L 43.6 66.0 L 42.4 66.0 L 41.2 66.1 L 40.1 66.0 L 38.9 66.0 L 37.7 65.8 L 36.5 65.7 L 35.3 65.4 L 34.2 65.2 L 33.1 64.8 L 32.0 64.5 L 30.9 64.1 L 29.8 63.6 L 28.8 63.1 L 27.8 62.6 L 26.8 62.0 L 25.9 61.4 L 25.0 60.7 L 24.1 60.0 L 23.3 59.3 L 22.5 58.5 L 22.5 58.5 L 23.4 59.1 L 24.3 59.7 L 25.3 60.2 L 26.3 60.8 L 27.3 61.2 L 28.3 61.7 L 29.3 62.0 L 30.4 62.4 L 31.4 62.7 L 32.5 62.9 L 33.6 63.1 L 34.6 63.3 L 35.7 63.4 L 36.8 63.5 L 37.9 63.5 L 39.0 63.5 L 40.0 63.4 L 41.1 63.3 L 42.2 63.1 L 43.2 63.0 L 44.3 62.7 L 45.3 62.4 L 46.3 62.1 L 47.3 61.8 L 48.3 61.4 L 49.2 60.9 L 50.1 60.4 L 51.0 59.9 L 51.9 59.4 L 52.8 58.8 L 53.6 58.2 L 54.4 57.6 L 55.1 56.9 L 55.8 56.2 L 56.5 55.4 L 57.2 54.7 L 57.8 53.9 L 58.4 53.1 L 58.9 52.3 L 59.4 51.5 L 59.9 50.6 L 60.3 49.7 L 60.7 48.9 L 61.0 48.0 L 61.3 47.1 L 61.6 46.1 L 61.8 45.2 L 61.9 44.3 L 62.1 43.4 L 62.1 42.4 L 62.2 41.5 L 62.2 40.6 L 62.1 39.7 L 62.0 38.7 L 61.9 37.8 L 61.7 36.9 L 61.5 36.1 L 61.3 35.2 L 61.0 34.3 L 60.7 33.5 L 60.3 32.7 L 59.9 31.9 L 59.5 31.1 L 59.0 30.3 L 58.6 29.5 L 58.1 28.7 L 57.6 28.0 L 57.0 27.3 L 56.4 26.6 L 55.8 25.9 L 55.2 25.3 L 54.5 24.7 L 53.8 24.1 L 53.0 23.6 L 52.3 23.1 L 51.5 22.6 L 50.7 22.1 L 49.9 21.7 L 49.0 21.3 L 48.2 21.0 L 47.3 20.7 L 46.4 20.4 L 45.5 20.2 L 44.6 20.0 L 43.7 19.8 L 42.8 19.7 L 41.8 19.6 L 40.9 19.6 L 40.0 19.6 L 39.0 19.6 L 38.1 19.7 L 37.2 19.8 L 36.2 19.9 L 35.3 20.1 L 34.4 20.3 L 33.5 20.6 L 32.6 20.9 L 31.7 21.2 L 30.9 21.6 L 30.0 22.0 L 29.2 22.5 L 28.4 22.9 L 27.6 23.4 L 26.9 24.0 L 26.2 24.5 L 25.5 25.1 L 24.8 25.8 L 24.1 26.4 L 23.5 27.1 L 22.9 27.8 L 22.4 28.5 L 21.9 29.3 L 21.4 30.1 L 20.9 30.8 L 20.5 31.7 L 20.1 32.5 L 19.8 33.3 L 19.5 34.2 L 19.2 35.0 L 19.0 35.9 L 18.8 36.8 L 18.7 37.7 L 18.6 38.5 L 18.4 39.4 L 18.1 40.3 L 17.9 41.3 L 17.8 42.2 L 17.7 43.1 L 17.6 44.1 L 17.5 45.1 L 17.6 46.1 L 17.6 47.1 L 17.7 48.1 L 17.8 49.1 L 18.0 50.1 L 18.2 51.1 L 18.5 52.1 L 18.8 53.2 L 19.1 54.2 L 19.4 55.4 Z" fill="url(#og)"/></svg></span>
+    <span class="w-orbi">Órbi</span><span class="w-solo">solo</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#o-que-e">O que é</a></li>
+    <li><a href="/#funcionalidades">Funcionalidades</a></li>
+    <li><a href="/#para-quem">Para quem</a></li>
+    <li><a href="/#planos">Planos</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="nav-entrar" href="https://app.orbisolo.com.br">Entrar</a>
+    <a class="btn btn-iris" href="https://app.orbisolo.com.br">Começar grátis</a>
+  </div>
+</nav>
+
+  <div class="legal-hero">
+    <h1>Termos de Uso</h1>
+    <p>As regras para usar a plataforma Órbi Solo.</p>
+  </div>
+  <div class="legal-wrap">
+    <a class="legal-back" href="/"><i class="ti ti-arrow-left"></i>Voltar ao site</a>
+
+    <div class="legal-notice">
+      <i class="ti ti-alert-triangle"></i>
+      <p><strong>Rascunho em revisão.</strong> Este texto reflete o funcionamento real da plataforma, mas ainda não passou por revisão jurídica formal. Não trate como documento legal definitivo até a validação de um advogado.</p>
+    </div>
+
+    <h2>1. Aceitação dos termos</h2>
+    <p>Ao criar uma conta na Órbi Solo, você concorda com estes Termos de Uso e com a nossa Política de Privacidade. Se não concordar com algum ponto, não utilize a plataforma.</p>
+
+    <h2>2. Quem pode usar a Órbi Solo</h2>
+    <p>A plataforma é destinada a profissionais autônomos, atualmente psicólogos e psicanalistas com registro ativo em seu conselho profissional, que atuam por conta própria ou em pequenas clínicas.</p>
+
+    <h2>3. Sua conta</h2>
+    <p>Você é responsável por manter a confidencialidade da sua senha e por todas as atividades realizadas na sua conta. Avise-nos imediatamente em caso de uso não autorizado.</p>
+
+    <h2>4. Planos e cobrança</h2>
+    <ul>
+      <li>Todo novo cadastro tem direito a 30 dias de teste gratuito, sem necessidade de cartão de crédito.</li>
+      <li>Após o período de teste, a continuidade do uso depende da contratação de um dos planos pagos.</li>
+      <li>Os pagamentos são processados pelo Asaas, instituição regulamentada pelo Banco Central.</li>
+      <li>Você pode cancelar a qualquer momento, sem multa ou fidelidade.</li>
+    </ul>
+
+    <h2>5. Uso da plataforma</h2>
+    <p>Você concorda em usar a Órbi Solo apenas para fins lícitos, relacionados à gestão da sua prática profissional. É proibido usar a plataforma para armazenar conteúdo ilegal, tentar acessar dados de outros usuários, ou comprometer a segurança do sistema.</p>
+
+    <h2>6. Responsabilidade sobre dados de pacientes</h2>
+    <p>Você, profissional, é o responsável pelos dados de seus pacientes inseridos na plataforma, incluindo a obtenção de consentimento quando exigido por lei e pelo seu conselho profissional. A Órbi Solo fornece as ferramentas técnicas de armazenamento seguro, mas não acessa nem interpreta o conteúdo clínico.</p>
+
+    <h2>7. Integrações de terceiros</h2>
+    <p>A Órbi Solo pode se integrar a serviços de terceiros, como Google Agenda, Google Meet e Asaas. O uso dessas integrações também está sujeito aos termos de uso de cada serviço.</p>
+
+    <h2>8. Disponibilidade do serviço</h2>
+    <p>Fazemos o possível para manter a plataforma disponível de forma contínua, mas não garantimos operação livre de interrupções. Manutenções programadas serão comunicadas com antecedência sempre que possível.</p>
+
+    <h2>9. Cancelamento e encerramento</h2>
+    <p>Você pode encerrar sua conta a qualquer momento. Podemos suspender ou encerrar contas que violem estes termos, mediante aviso prévio, exceto em casos de uso indevido grave.</p>
+
+    <h2>10. Alterações nestes termos</h2>
+    <p>Podemos atualizar estes Termos de Uso periodicamente. Alterações relevantes serão comunicadas por e-mail ou dentro da plataforma.</p>
+
+    <h2>11. Legislação aplicável</h2>
+    <p>Estes termos são regidos pelas leis brasileiras. Eventuais disputas serão resolvidas no foro da comarca do domicílio da empresa.</p>
+
+    <h2>12. Contato</h2>
+    <p>Dúvidas sobre estes termos podem ser enviadas para <strong>suporte@orbisolo.com.br</strong>.</p>
+
+    <p class="legal-updated">Última atualização: agosto de 2026.</p>
+  </div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo">
+      <span class="foot-mark"><svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M 19.4 55.4 L 18.4 54.8 L 17.4 54.0 L 16.5 53.3 L 15.7 52.4 L 14.9 51.5 L 14.2 50.6 L 13.5 49.6 L 12.9 48.6 L 12.3 47.5 L 11.8 46.4 L 11.3 45.3 L 10.8 44.1 L 10.5 42.9 L 10.2 41.7 L 9.9 40.5 L 9.7 39.2 L 9.6 37.9 L 9.8 36.7 L 10.0 35.4 L 10.2 34.2 L 10.6 32.9 L 10.9 31.7 L 11.3 30.5 L 11.8 29.3 L 12.4 28.2 L 12.9 27.0 L 13.6 25.9 L 14.3 24.8 L 15.0 23.7 L 15.8 22.7 L 16.6 21.7 L 17.5 20.7 L 18.4 19.8 L 19.4 18.9 L 20.4 18.1 L 21.4 17.3 L 22.5 16.5 L 23.6 15.8 L 24.7 15.1 L 25.9 14.5 L 27.1 13.9 L 28.3 13.4 L 29.5 12.9 L 30.8 12.5 L 32.1 12.1 L 33.4 11.8 L 34.7 11.5 L 36.0 11.3 L 37.3 11.1 L 38.6 11.0 L 39.9 11.0 L 41.3 11.0 L 42.6 11.1 L 43.9 11.2 L 45.2 11.4 L 46.5 11.6 L 47.8 11.9 L 49.1 12.2 L 50.4 12.6 L 51.6 13.0 L 52.8 13.5 L 54.0 14.1 L 55.2 14.7 L 56.3 15.3 L 57.4 16.0 L 58.5 16.7 L 59.5 17.5 L 60.5 18.3 L 61.5 19.2 L 62.4 20.1 L 63.3 21.0 L 64.1 22.0 L 64.9 23.0 L 65.7 24.0 L 66.4 25.1 L 67.0 26.2 L 67.6 27.3 L 68.1 28.5 L 68.5 29.7 L 68.9 30.9 L 69.2 32.1 L 69.4 33.3 L 69.6 34.6 L 69.8 35.8 L 69.8 37.1 L 69.9 38.3 L 69.8 39.5 L 69.7 40.8 L 69.6 42.0 L 69.4 43.2 L 69.1 44.4 L 68.8 45.6 L 68.4 46.8 L 68.0 48.0 L 67.5 49.1 L 67.0 50.2 L 66.5 51.3 L 65.8 52.4 L 65.2 53.4 L 64.5 54.4 L 63.7 55.4 L 62.9 56.4 L 62.1 57.3 L 61.2 58.1 L 60.3 59.0 L 59.3 59.7 L 58.4 60.5 L 57.3 61.2 L 56.3 61.9 L 55.2 62.5 L 54.2 63.0 L 53.0 63.6 L 51.9 64.0 L 50.8 64.5 L 49.6 64.8 L 48.4 65.2 L 47.2 65.4 L 46.0 65.7 L 44.9 65.8 L 43.6 66.0 L 42.4 66.0 L 41.2 66.1 L 40.1 66.0 L 38.9 66.0 L 37.7 65.8 L 36.5 65.7 L 35.3 65.4 L 34.2 65.2 L 33.1 64.8 L 32.0 64.5 L 30.9 64.1 L 29.8 63.6 L 28.8 63.1 L 27.8 62.6 L 26.8 62.0 L 25.9 61.4 L 25.0 60.7 L 24.1 60.0 L 23.3 59.3 L 22.5 58.5 L 22.5 58.5 L 23.4 59.1 L 24.3 59.7 L 25.3 60.2 L 26.3 60.8 L 27.3 61.2 L 28.3 61.7 L 29.3 62.0 L 30.4 62.4 L 31.4 62.7 L 32.5 62.9 L 33.6 63.1 L 34.6 63.3 L 35.7 63.4 L 36.8 63.5 L 37.9 63.5 L 39.0 63.5 L 40.0 63.4 L 41.1 63.3 L 42.2 63.1 L 43.2 63.0 L 44.3 62.7 L 45.3 62.4 L 46.3 62.1 L 47.3 61.8 L 48.3 61.4 L 49.2 60.9 L 50.1 60.4 L 51.0 59.9 L 51.9 59.4 L 52.8 58.8 L 53.6 58.2 L 54.4 57.6 L 55.1 56.9 L 55.8 56.2 L 56.5 55.4 L 57.2 54.7 L 57.8 53.9 L 58.4 53.1 L 58.9 52.3 L 59.4 51.5 L 59.9 50.6 L 60.3 49.7 L 60.7 48.9 L 61.0 48.0 L 61.3 47.1 L 61.6 46.1 L 61.8 45.2 L 61.9 44.3 L 62.1 43.4 L 62.1 42.4 L 62.2 41.5 L 62.2 40.6 L 62.1 39.7 L 62.0 38.7 L 61.9 37.8 L 61.7 36.9 L 61.5 36.1 L 61.3 35.2 L 61.0 34.3 L 60.7 33.5 L 60.3 32.7 L 59.9 31.9 L 59.5 31.1 L 59.0 30.3 L 58.6 29.5 L 58.1 28.7 L 57.6 28.0 L 57.0 27.3 L 56.4 26.6 L 55.8 25.9 L 55.2 25.3 L 54.5 24.7 L 53.8 24.1 L 53.0 23.6 L 52.3 23.1 L 51.5 22.6 L 50.7 22.1 L 49.9 21.7 L 49.0 21.3 L 48.2 21.0 L 47.3 20.7 L 46.4 20.4 L 45.5 20.2 L 44.6 20.0 L 43.7 19.8 L 42.8 19.7 L 41.8 19.6 L 40.9 19.6 L 40.0 19.6 L 39.0 19.6 L 38.1 19.7 L 37.2 19.8 L 36.2 19.9 L 35.3 20.1 L 34.4 20.3 L 33.5 20.6 L 32.6 20.9 L 31.7 21.2 L 30.9 21.6 L 30.0 22.0 L 29.2 22.5 L 28.4 22.9 L 27.6 23.4 L 26.9 24.0 L 26.2 24.5 L 25.5 25.1 L 24.8 25.8 L 24.1 26.4 L 23.5 27.1 L 22.9 27.8 L 22.4 28.5 L 21.9 29.3 L 21.4 30.1 L 20.9 30.8 L 20.5 31.7 L 20.1 32.5 L 19.8 33.3 L 19.5 34.2 L 19.2 35.0 L 19.0 35.9 L 18.8 36.8 L 18.7 37.7 L 18.6 38.5 L 18.4 39.4 L 18.1 40.3 L 17.9 41.3 L 17.8 42.2 L 17.7 43.1 L 17.6 44.1 L 17.5 45.1 L 17.6 46.1 L 17.6 47.1 L 17.7 48.1 L 17.8 49.1 L 18.0 50.1 L 18.2 51.1 L 18.5 52.1 L 18.8 53.2 L 19.1 54.2 L 19.4 55.4 Z" fill="#7F77DD"/></svg></span>
+      <span class="foot-orbi">Órbi</span><span class="foot-solo">solo</span>
+    </div>
+    <div class="foot-links">
+      <a href="https://orbisolo.com.br/politica-de-privacidade" target="_blank" rel="noopener">Privacidade</a>
+      <a href="https://orbisolo.com.br/termos-de-uso" target="_blank" rel="noopener">Termos</a>
+      <a href="mailto:suporte@orbisolo.com.br">Suporte</a>
+    </div>
+    <span class="foot-copy">© 2025 Órbi solo · orbisolo.com.br</span>
+  </div>
+</footer>
+</body>
+</html>
