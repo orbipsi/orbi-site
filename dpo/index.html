@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidade · Órbi solo</title>
+<title>Encarregada de Dados (DPO) · Órbi solo</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.11.0/dist/tabler-icons.min.css">
 <style>
@@ -306,6 +306,20 @@
     .foot-inner{flex-direction:column;align-items:flex-start;text-align:left}
   }
   @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+.dpo-card{background:var(--lilas);border:1px solid rgba(83,74,183,.18);border-radius:16px;
+  padding:1.4rem 1.6rem;margin:1.6rem 0 2.2rem;display:flex;align-items:center;gap:1.1rem}
+.dpo-avatar{width:52px;height:52px;border-radius:50%;background:var(--iris);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;flex-shrink:0}
+.dpo-name{font-size:1.05rem;font-weight:800;color:var(--tinta)}
+.dpo-role{font-size:.84rem;font-weight:600;color:var(--cinza);margin-bottom:.4rem}
+.dpo-contact{font-size:.9rem;font-weight:700;color:var(--iris)}
+.rights-list{list-style:none;margin-left:0;display:flex;flex-direction:column;gap:1rem;margin-bottom:1.4rem}
+.rights-list li{display:flex;gap:.9rem;align-items:flex-start;background:var(--creme);
+  border-radius:14px;padding:1rem 1.1rem}
+.rights-ic{width:36px;height:36px;border-radius:11px;background:var(--lilas);color:var(--iris);
+  display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.rights-list strong{display:block;color:var(--tinta);margin-bottom:.15rem}
 </style>
 </head>
 <body>
@@ -329,114 +343,58 @@
   </div>
 </nav>
   <div class="legal-hero">
-    <h1>Política de Privacidade</h1>
-    <p>Conformidade com a LGPD (Lei nº 13.709/2018). Como tratamos seus dados e os dados dos seus pacientes.</p>
+    <h1>Encarregada de Dados (DPO)</h1>
+    <p>Canal do Encarregado de Dados, conforme art. 41 da LGPD (Lei nº 13.709/2018).</p>
   </div>
   <div class="legal-wrap">
     <a class="legal-back" href="/"><i class="ti ti-arrow-left"></i>Voltar ao site</a>
 
-    <h2>1. Quem somos</h2>
-    <p>A Órbi Solo é uma plataforma SaaS de gestão para psicólogos e psicanalistas autônomos, operada por Daniele da Cruz Viana (CPF disponível mediante solicitação ao DPO), com sede no Brasil. Para fins da LGPD, a Órbi Solo atua como operadora de dados. O profissional de saúde usuário da plataforma é o controlador dos dados dos seus pacientes.</p>
+    <div class="dpo-card">
+      <div class="dpo-avatar">DC</div>
+      <div>
+        <div class="dpo-name">Daniele da Cruz</div>
+        <div class="dpo-role">Encarregada de Proteção de Dados da Órbi Solo</div>
+        <div class="dpo-contact"><i class="ti ti-mail"></i> orbi.cliente@gmail.com</div>
+      </div>
+    </div>
 
-    <h2>2. Dados que coletamos</h2>
-    <p><strong>Do profissional (usuário da plataforma):</strong></p>
-    <ul>
-      <li>Dados cadastrais: nome completo, e-mail, telefone, CPF, CNPJ (opcional), CRP</li>
-      <li>Endereço comercial completo (CEP, logradouro, número, bairro, cidade, UF)</li>
-      <li>Dados de acesso: e-mail, senha criptografada, tokens de sessão</li>
-      <li>Dados de assinatura e plano contratado</li>
-      <li>Dados de integração: credenciais Google Calendar, chave de API Asaas</li>
-      <li>Logs de acesso e uso da plataforma</li>
-    </ul>
-    <p><strong>Dos pacientes (inseridos pelo profissional):</strong></p>
-    <ul>
-      <li>Dados cadastrais: nome, e-mail, telefone, CPF, data de nascimento, endereço</li>
-      <li>Dados de saúde mental: prontuários clínicos, classificados como dados sensíveis pela LGPD</li>
-      <li>Dados financeiros: valor acordado, histórico de sessões e pagamentos</li>
-      <li>Dados de agendamento: datas e horários de sessões</li>
-    </ul>
+    <p>A Órbi Solo designou uma Encarregada de Proteção de Dados (DPO) para ser o canal de comunicação entre os titulares de dados, a plataforma e a Autoridade Nacional de Proteção de Dados (ANPD), conforme o artigo 41 da LGPD (Lei nº 13.709/2018).</p>
+    <p>Tempo de resposta: até 15 dias úteis.</p>
 
-    <h2>3. Base legal para o tratamento</h2>
-    <p>O tratamento de dados na Órbi Solo se fundamenta nas seguintes bases legais da LGPD:</p>
-    <ul>
-      <li><strong>Execução de contrato</strong> (art. 7º, V): para prestação dos serviços contratados pelo profissional</li>
-      <li><strong>Tutela da saúde</strong> (art. 11, II, f): para tratamento de dados sensíveis de pacientes, realizado por profissional de saúde</li>
-      <li><strong>Legítimo interesse</strong> (art. 7º, IX): para segurança, prevenção a fraudes e melhoria do serviço</li>
-      <li><strong>Cumprimento de obrigação legal</strong> (art. 7º, II): para retenção de dados conforme exigências do CFP e legislação aplicável</li>
-    </ul>
-
-    <h2>4. Como usamos os dados</h2>
-    <ul>
-      <li>Prestação dos serviços da plataforma: agenda, prontuários, faturamento</li>
-      <li>Envio de e-mails de confirmação e lembrete de sessões aos pacientes</li>
-      <li>Integração com Google Calendar e Asaas, mediante autorização do profissional</li>
-      <li>Geração de cobranças e notas fiscais</li>
-      <li>Suporte técnico e comunicações sobre o serviço</li>
-      <li>Segurança e prevenção a fraudes</li>
-    </ul>
-    <p>Não vendemos, alugamos ou compartilhamos dados pessoais com terceiros para fins de marketing.</p>
-
-    <h2>5. Compartilhamento de dados</h2>
-    <p>Os dados podem ser compartilhados apenas com:</p>
-    <ul>
-      <li><strong>Supabase Inc.:</strong> infraestrutura de banco de dados e autenticação (operador)</li>
-      <li><strong>Vercel Inc.:</strong> hospedagem da aplicação (operador)</li>
-      <li><strong>Google LLC:</strong> integração com Google Calendar e Meet, mediante autorização do profissional</li>
-      <li><strong>Asaas Gestão Financeira S.A.:</strong> processamento de pagamentos e emissão de NF, mediante autorização do profissional</li>
-      <li><strong>Resend Inc.:</strong> envio de e-mails transacionais</li>
-      <li>Autoridades competentes, quando exigido por lei</li>
-    </ul>
-    <p>Todos os fornecedores são contratados com cláusulas de proteção de dados e estão em conformidade com a LGPD ou legislações equivalentes.</p>
-
-    <h2>6. Segurança dos dados</h2>
-    <ul>
-      <li>Prontuários criptografados com AES-256, ilegíveis mesmo em caso de acesso não autorizado ao banco</li>
-      <li>Isolamento de dados por profissional via Row Level Security (RLS)</li>
-      <li>Comunicação protegida por HTTPS/TLS em trânsito</li>
-      <li>Senhas nunca armazenadas em texto simples (hash bcrypt via Supabase Auth)</li>
-      <li>Autenticação com tokens JWT com expiração</li>
-      <li>Logs de acesso a dados sensíveis</li>
-      <li>Backups automáticos diários pelo Supabase</li>
+    <h2>Seus direitos como titular</h2>
+    <p>Conforme o art. 18 da LGPD, você pode solicitar ao DPO:</p>
+    <ul class="rights-list">
+      <li><span class="rights-ic"><i class="ti ti-clipboard-check"></i></span>
+        <div><strong>Confirmação e acesso</strong>Confirmar se tratamos seus dados e obter uma cópia de todos os dados pessoais que mantemos sobre você.</div></li>
+      <li><span class="rights-ic"><i class="ti ti-edit"></i></span>
+        <div><strong>Correção</strong>Corrigir dados incompletos, inexatos ou desatualizados.</div></li>
+      <li><span class="rights-ic"><i class="ti ti-trash"></i></span>
+        <div><strong>Eliminação</strong>Solicitar a exclusão de dados desnecessários ou tratados em desconformidade com a LGPD.</div></li>
+      <li><span class="rights-ic"><i class="ti ti-package"></i></span>
+        <div><strong>Portabilidade</strong>Receber seus dados em formato estruturado e legível por máquina (CSV/JSON).</div></li>
+      <li><span class="rights-ic"><i class="ti ti-search"></i></span>
+        <div><strong>Informação sobre compartilhamento</strong>Saber com quais entidades seus dados são compartilhados.</div></li>
+      <li><span class="rights-ic"><i class="ti ti-x"></i></span>
+        <div><strong>Revogação do consentimento</strong>Revogar consentimentos fornecidos anteriormente, quando aplicável.</div></li>
+      <li><span class="rights-ic"><i class="ti ti-alert-triangle"></i></span>
+        <div><strong>Oposição</strong>Opor-se a tratamento realizado em desconformidade com a legislação.</div></li>
     </ul>
 
-    <h2>7. Retenção de dados</h2>
+    <h2>Como exercer seus direitos</h2>
+    <p>Envie um e-mail para <strong>orbi.cliente@gmail.com</strong> com:</p>
     <ul>
-      <li>Dados do profissional: mantidos durante a vigência do contrato e por até 5 anos após o encerramento, conforme obrigações legais</li>
-      <li>Prontuários dos pacientes: o CFP exige guarda mínima de 5 anos após a última sessão. A Órbi Solo mantém conforme essa exigência</li>
-      <li>Logs de acesso: mantidos por 12 meses</li>
-      <li>Dados de pagamento: mantidos conforme exigências fiscais, por 5 anos</li>
+      <li>Seu nome completo e e-mail cadastrado</li>
+      <li>O direito que deseja exercer (acesso, correção, exclusão, etc.)</li>
+      <li>Detalhes do pedido</li>
     </ul>
-    <p>Após o prazo de retenção, os dados são excluídos de forma segura e irreversível.</p>
+    <p>Responderemos em até 15 dias úteis. Podemos solicitar verificação de identidade antes de processar o pedido, para garantir a segurança dos seus dados.</p>
 
-    <h2>8. Direitos dos titulares</h2>
-    <p>Nos termos da LGPD (art. 18), você tem direito a:</p>
-    <ul>
-      <li><strong>Confirmação:</strong> saber se tratamos seus dados</li>
-      <li><strong>Acesso:</strong> obter cópia dos seus dados</li>
-      <li><strong>Correção:</strong> corrigir dados incompletos ou desatualizados</li>
-      <li><strong>Anonimização ou exclusão:</strong> solicitar eliminação de dados desnecessários</li>
-      <li><strong>Portabilidade:</strong> receber seus dados em formato estruturado</li>
-      <li><strong>Revogação do consentimento:</strong> quando aplicável</li>
-      <li><strong>Oposição:</strong> opor-se a tratamento irregular</li>
-    </ul>
-    <p>Para exercer seus direitos, entre em contato com nosso DPO pelo e-mail <strong>orbi.cliente@gmail.com</strong> ou acesse <a href="/dpo" style="color:var(--iris);font-weight:700">orbisolo.com.br/dpo</a>. Respondemos em até 15 dias úteis.</p>
+    <h2>Incidentes de segurança</h2>
+    <p>Se você identificar ou suspeitar de um incidente de segurança envolvendo seus dados na plataforma Órbi Solo, entre em contato imediatamente pelo e-mail <strong>orbi.cliente@gmail.com</strong> com o assunto "Incidente de Segurança".</p>
+    <p>A Órbi Solo se compromete a comunicar à ANPD e aos titulares afetados qualquer incidente que possa gerar risco ou dano relevante, conforme o art. 48 da LGPD.</p>
 
-    <h2>9. Incidentes de segurança</h2>
-    <p>Em caso de incidente de segurança que possa gerar risco ou dano relevante aos titulares, a Órbi Solo notificará a ANPD e os titulares afetados no prazo estabelecido pela legislação vigente, conforme o art. 48 da LGPD, com informações sobre a natureza do incidente, os dados afetados e as medidas tomadas.</p>
-
-    <h2>10. Cookies</h2>
-    <p>Utilizamos apenas cookies estritamente necessários para autenticação e funcionamento da plataforma. Não utilizamos cookies de rastreamento ou publicidade.</p>
-
-    <h2>11. Alterações nesta política</h2>
-    <p>Esta política pode ser atualizada periodicamente. Quando houver alterações relevantes, notificaremos os usuários por e-mail e solicitaremos novo aceite antes do próximo acesso à plataforma. O histórico de versões fica disponível mediante solicitação ao DPO.</p>
-
-    <h2>12. Encarregado de Dados (DPO)</h2>
-    <p>Nossa Encarregada de Proteção de Dados é Daniele da Cruz.</p>
-    <p>E-mail: <strong>orbi.cliente@gmail.com</strong></p>
-    <p>Disponível para atender titulares e a ANPD conforme o art. 41 da LGPD.</p>
-
-    <h2>13. Legislação aplicável</h2>
-    <p>Esta política está em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), a Resolução CFP nº 009/2024 e demais normas aplicáveis ao tratamento de dados de saúde no Brasil.</p>
+    <h2>Reclamação à ANPD</h2>
+    <p>Se não ficou satisfeito com nossa resposta, você pode registrar uma reclamação diretamente na Autoridade Nacional de Proteção de Dados (ANPD) em gov.br/anpd.</p>
 
     <p class="legal-updated">Versão 1.0. Última atualização: julho de 2026.</p>
 

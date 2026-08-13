@@ -36,7 +36,7 @@
 
   /* NAV */
   #navbar{position:sticky;top:0;z-index:100;height:64px;display:flex;align-items:center;gap:2rem;
-    padding:0 6%;background:var(--branco);border-bottom:1px solid rgba(83,74,183,.1);
+    justify-content:space-between;padding:0 6%;background:var(--branco);border-bottom:1px solid rgba(83,74,183,.1);
     transition:box-shadow .3s}
   #navbar.scrolled{box-shadow:0 4px 18px rgba(83,74,183,.1)}
   .nav-logo{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
@@ -267,43 +267,45 @@
   /* MOBILE */
   @media(max-width:960px){
     .func-grid{grid-template-columns:repeat(2,1fr)}
+    .sf-grid{grid-template-columns:repeat(2,1fr)}
   }
   @media(max-width:860px){
-    .hero-inner{grid-template-columns:1fr;gap:2.4rem;padding-top:100px}
+    section{padding:64px 6%}
+    .hero{min-height:0;padding:0 6%}
+    .hero-inner{grid-template-columns:1fr;gap:2.2rem;padding:96px 0 48px}
     .notif-col{display:none}
     .aud-grid{grid-template-columns:1fr}
     .aud-main{grid-column:auto}
     .plans{grid-template-columns:1fr}
     .seg-grid{grid-template-columns:repeat(2,1fr)}
     .nav-links{display:none}
-    .plan-hero{grid-template-columns:1fr}
-    .ph-cta{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.2);padding-top:1.2rem}
+    .nav-right{gap:.7rem}
+    .plan-hero{grid-template-columns:1fr;padding:1.7rem 1.6rem}
+    .ph-cta{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,.2);padding-top:1.2rem;align-items:stretch}
+    .ph-cta .btn{width:100%}
+    .quote{padding:64px 6%}
+    .final{padding:64px 6%}
+    .final-blob{opacity:.6}
   }
   @media(max-width:620px){
-    .plans{grid-template-columns:1fr}.seg-grid{grid-template-columns:1fr}
-    .strip-inner{gap:1.2rem}
+    .plans{grid-template-columns:1fr}
+    .seg-grid{grid-template-columns:1fr}
+    .sf-grid{grid-template-columns:1fr}
+    .func-grid{grid-template-columns:1fr}
+    .strip-inner{gap:1rem}
+    .strip{padding:1.2rem 6%}
+    .hero h1{font-size:clamp(1.9rem,7vw,2.6rem)}
+    .hero-desc{max-width:100%}
+    .sec-title{font-size:clamp(1.5rem,6vw,2rem)}
+    .quote-text{font-size:clamp(1.05rem,5vw,1.3rem)}
+    .final h2,.final-cta-big{font-size:clamp(1.4rem,6vw,1.9rem)}
+    .plan-hero{padding:1.4rem 1.2rem}
+    .nav-logo .w-orbi,.nav-logo .w-solo{font-size:1.12rem}
+    #navbar .btn{padding:.55rem 1rem;font-size:.82rem}
+    .nav-entrar{font-size:.82rem}
+    .foot-inner{flex-direction:column;align-items:flex-start;text-align:left}
   }
-  @prefers-reduced-motion:reduce{*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-
-/* PÁGINAS INTERNAS (legal) */
-.legal-hero{background:var(--iris);padding:64px 6% 48px;text-align:center}
-.legal-hero h1{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:.6rem}
-.legal-hero p{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.65)}
-.legal-wrap{max-width:760px;margin:0 auto;padding:56px 6% 80px}
-.legal-notice{background:#FCF0DC;border:1px solid rgba(239,159,39,.35);border-radius:14px;
-  padding:1.1rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start;margin-bottom:2.6rem}
-.legal-notice i{color:var(--amb);font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
-.legal-notice p{font-size:.88rem;font-weight:600;color:#7A4F0C;line-height:1.6}
-.legal-wrap h2{font-size:1.25rem;font-weight:900;color:var(--tinta);margin:2.2rem 0 .8rem;letter-spacing:-.02em}
-.legal-wrap h2:first-of-type{margin-top:0}
-.legal-wrap p{font-size:.95rem;font-weight:600;color:var(--cinza);line-height:1.75;margin-bottom:1rem}
-.legal-wrap ul{margin:0 0 1rem 1.2rem}
-.legal-wrap li{font-size:.95rem;font-weight:600;color:var(--cinza);line-height:1.75;margin-bottom:.4rem}
-.legal-wrap strong{color:var(--tinta)}
-.legal-back{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:700;
-  color:var(--iris);margin-bottom:1.6rem}
-.legal-updated{font-size:.82rem;font-weight:600;color:var(--cinza);margin-top:2.6rem;
-  padding-top:1.6rem;border-top:1px solid rgba(83,74,183,.12)}
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
@@ -326,7 +328,6 @@
     <a class="btn btn-iris" href="https://app.orbisolo.com.br">Começar grátis</a>
   </div>
 </nav>
-
   <div class="legal-hero">
     <h1>Termos de Uso</h1>
     <p>As regras para usar a plataforma Órbi Solo.</p>
@@ -334,55 +335,95 @@
   <div class="legal-wrap">
     <a class="legal-back" href="/"><i class="ti ti-arrow-left"></i>Voltar ao site</a>
 
-    <div class="legal-notice">
-      <i class="ti ti-alert-triangle"></i>
-      <p><strong>Rascunho em revisão.</strong> Este texto reflete o funcionamento real da plataforma, mas ainda não passou por revisão jurídica formal. Não trate como documento legal definitivo até a validação de um advogado.</p>
-    </div>
+    <p>Ao criar uma conta na Órbi Solo, você declara ter lido, compreendido e concordado com estes Termos de Uso e com nossa Política de Privacidade.</p>
 
-    <h2>1. Aceitação dos termos</h2>
-    <p>Ao criar uma conta na Órbi Solo, você concorda com estes Termos de Uso e com a nossa Política de Privacidade. Se não concordar com algum ponto, não utilize a plataforma.</p>
+    <h2>1. Sobre a Órbi Solo</h2>
+    <p>A Órbi Solo é uma plataforma SaaS de gestão clínica e administrativa desenvolvida exclusivamente para psicólogos e psicanalistas autônomos no Brasil. A plataforma oferece recursos de agendamento, prontuário eletrônico, faturamento, emissão de notas fiscais e integração com ferramentas como Google Calendar e Asaas.</p>
 
-    <h2>2. Quem pode usar a Órbi Solo</h2>
-    <p>A plataforma é destinada a profissionais autônomos, atualmente psicólogos e psicanalistas com registro ativo em seu conselho profissional, que atuam por conta própria ou em pequenas clínicas.</p>
-
-    <h2>3. Sua conta</h2>
-    <p>Você é responsável por manter a confidencialidade da sua senha e por todas as atividades realizadas na sua conta. Avise-nos imediatamente em caso de uso não autorizado.</p>
-
-    <h2>4. Planos e cobrança</h2>
+    <h2>2. Elegibilidade</h2>
+    <p>Para usar a Órbi Solo você deve:</p>
     <ul>
-      <li>Todo novo cadastro tem direito a 30 dias de teste gratuito, sem necessidade de cartão de crédito.</li>
-      <li>Após o período de teste, a continuidade do uso depende da contratação de um dos planos pagos.</li>
-      <li>Os pagamentos são processados pelo Asaas, instituição regulamentada pelo Banco Central.</li>
-      <li>Você pode cancelar a qualquer momento, sem multa ou fidelidade.</li>
+      <li>Ser maior de 18 anos</li>
+      <li>Ser profissional de psicologia ou psicanalista com registro ativo no CRP</li>
+      <li>Ter capacidade legal para celebrar contratos no Brasil</li>
+      <li>Fornecer informações verdadeiras no cadastro</li>
     </ul>
 
-    <h2>5. Uso da plataforma</h2>
-    <p>Você concorda em usar a Órbi Solo apenas para fins lícitos, relacionados à gestão da sua prática profissional. É proibido usar a plataforma para armazenar conteúdo ilegal, tentar acessar dados de outros usuários, ou comprometer a segurança do sistema.</p>
+    <h2>3. Planos e pagamento</h2>
+    <ul>
+      <li>A Órbi Solo oferece um período de teste gratuito de 30 dias, sem necessidade de cartão de crédito</li>
+      <li>Após o período de teste, a continuidade do serviço está condicionada à assinatura de um plano pago</li>
+      <li>Os valores dos planos estão disponíveis na página de planos e podem ser alterados com aviso prévio de 30 dias</li>
+      <li>O cancelamento pode ser feito a qualquer momento. O acesso permanece ativo até o fim do período pago</li>
+      <li>Não há reembolso por períodos não utilizados após o cancelamento</li>
+    </ul>
 
-    <h2>6. Responsabilidade sobre dados de pacientes</h2>
-    <p>Você, profissional, é o responsável pelos dados de seus pacientes inseridos na plataforma, incluindo a obtenção de consentimento quando exigido por lei e pelo seu conselho profissional. A Órbi Solo fornece as ferramentas técnicas de armazenamento seguro, mas não acessa nem interpreta o conteúdo clínico.</p>
+    <h2>4. Responsabilidades do profissional</h2>
+    <p>Ao usar a Órbi Solo, o profissional é responsável por:</p>
+    <ul>
+      <li>Obter o consentimento dos seus pacientes para o registro de dados em sistema digital, conforme a LGPD e o Código de Ética do CFP</li>
+      <li>Manter a confidencialidade das credenciais de acesso à plataforma</li>
+      <li>Garantir que as informações inseridas são verdadeiras e atualizadas</li>
+      <li>Utilizar a plataforma em conformidade com o Código de Ética Profissional do Psicólogo e as resoluções do CFP</li>
+      <li>Cumprir as obrigações tributárias decorrentes do uso das funcionalidades de faturamento</li>
+      <li>Não compartilhar o acesso à conta com terceiros não autorizados</li>
+    </ul>
 
-    <h2>7. Integrações de terceiros</h2>
-    <p>A Órbi Solo pode se integrar a serviços de terceiros, como Google Agenda, Google Meet e Asaas. O uso dessas integrações também está sujeito aos termos de uso de cada serviço.</p>
+    <h2>5. Responsabilidades da Órbi Solo</h2>
+    <ul>
+      <li>Disponibilizar a plataforma com disponibilidade mínima de 99% ao mês, exceto em manutenções programadas</li>
+      <li>Proteger os dados com as medidas de segurança descritas na Política de Privacidade</li>
+      <li>Notificar o profissional sobre incidentes de segurança que possam afetar seus dados ou os de seus pacientes</li>
+      <li>Fornecer suporte técnico por e-mail nos dias úteis</li>
+      <li>Avisar com antecedência mínima de 30 dias sobre alterações relevantes nos termos ou preços</li>
+    </ul>
 
-    <h2>8. Disponibilidade do serviço</h2>
-    <p>Fazemos o possível para manter a plataforma disponível de forma contínua, mas não garantimos operação livre de interrupções. Manutenções programadas serão comunicadas com antecedência sempre que possível.</p>
+    <h2>6. Limitação de responsabilidade</h2>
+    <p>A Órbi Solo não se responsabiliza por:</p>
+    <ul>
+      <li>Decisões clínicas tomadas pelo profissional com base nas informações registradas na plataforma</li>
+      <li>Falhas em serviços de terceiros (Google, Asaas, Supabase) fora do controle da Órbi Solo</li>
+      <li>Danos decorrentes do uso indevido das credenciais de acesso pelo profissional</li>
+      <li>Perda de dados causada por ação ou omissão do próprio profissional</li>
+      <li>Descumprimento das obrigações do profissional perante o CFP, LGPD ou legislação tributária</li>
+    </ul>
 
-    <h2>9. Cancelamento e encerramento</h2>
-    <p>Você pode encerrar sua conta a qualquer momento. Podemos suspender ou encerrar contas que violem estes termos, mediante aviso prévio, exceto em casos de uso indevido grave.</p>
+    <h2>7. Propriedade intelectual</h2>
+    <p>A Órbi Solo e todos os seus elementos, incluindo código, design, marca, textos e funcionalidades, são propriedade exclusiva de Daniele da Cruz Viana. É proibida a reprodução, cópia, engenharia reversa ou uso não autorizado de qualquer parte da plataforma.</p>
+    <p>Os dados inseridos pelo profissional (pacientes, prontuários, sessões) pertencem ao profissional. A Órbi Solo não reivindica propriedade sobre esses dados.</p>
 
-    <h2>10. Alterações nestes termos</h2>
-    <p>Podemos atualizar estes Termos de Uso periodicamente. Alterações relevantes serão comunicadas por e-mail ou dentro da plataforma.</p>
+    <h2>8. Uso aceitável</h2>
+    <p>É proibido usar a Órbi Solo para:</p>
+    <ul>
+      <li>Atividades ilegais ou que violem direitos de terceiros</li>
+      <li>Inserir dados de pacientes sem o devido consentimento</li>
+      <li>Tentar acessar dados de outros profissionais usuários da plataforma</li>
+      <li>Realizar engenharia reversa ou extrair o código da plataforma</li>
+      <li>Sobrecarregar intencionalmente a infraestrutura da plataforma</li>
+    </ul>
 
-    <h2>11. Legislação aplicável</h2>
-    <p>Estes termos são regidos pelas leis brasileiras. Eventuais disputas serão resolvidas no foro da comarca do domicílio da empresa.</p>
+    <h2>9. Cancelamento e exclusão de conta</h2>
+    <p>O profissional pode solicitar o cancelamento da conta a qualquer momento pelo e-mail <strong>orbi.cliente@gmail.com</strong>. Após o cancelamento:</p>
+    <ul>
+      <li>O acesso à plataforma é encerrado ao fim do período pago</li>
+      <li>Os dados ficam retidos pelos prazos legais descritos na Política de Privacidade</li>
+      <li>O profissional pode solicitar exportação dos seus dados antes do cancelamento</li>
+      <li>Após o prazo de retenção, os dados são excluídos de forma irreversível</li>
+    </ul>
+
+    <h2>10. Alterações nos termos</h2>
+    <p>Estes termos podem ser atualizados. Em caso de alterações relevantes, o profissional será notificado por e-mail com antecedência mínima de 15 dias e deverá aceitar os novos termos para continuar usando a plataforma.</p>
+
+    <h2>11. Foro e legislação aplicável</h2>
+    <p>Estes termos são regidos pela legislação brasileira. Fica eleito o foro da Comarca de São Paulo, SP, para dirimir quaisquer controvérsias decorrentes deste instrumento.</p>
 
     <h2>12. Contato</h2>
-    <p>Dúvidas sobre estes termos podem ser enviadas para <strong>suporte@orbisolo.com.br</strong>.</p>
+    <p>Dúvidas sobre estes termos: <strong>orbi.cliente@gmail.com</strong></p>
+    <p>Questões sobre dados pessoais: <strong>orbi.cliente@gmail.com</strong></p>
 
-    <p class="legal-updated">Última atualização: agosto de 2026.</p>
+    <p class="legal-updated">Versão 1.0. Última atualização: julho de 2026.</p>
+
   </div>
-
 <footer>
   <div class="foot-inner">
     <div class="foot-logo">
@@ -390,11 +431,12 @@
       <span class="foot-orbi">Órbi</span><span class="foot-solo">solo</span>
     </div>
     <div class="foot-links">
-      <a href="https://orbisolo.com.br/politica-de-privacidade" target="_blank" rel="noopener">Privacidade</a>
-      <a href="https://orbisolo.com.br/termos-de-uso" target="_blank" rel="noopener">Termos</a>
-      <a href="mailto:suporte@orbisolo.com.br">Suporte</a>
+      <a href="/politica-de-privacidade">Privacidade</a>
+      <a href="/termos-de-uso">Termos de Uso</a>
+      <a href="/dpo">DPO</a>
+      <a href="mailto:orbi.cliente@gmail.com">Contato</a>
     </div>
-    <span class="foot-copy">© 2025 Órbi solo · orbisolo.com.br</span>
+    <span class="foot-copy">© 2026 Órbi solo · orbisolo.com.br</span>
   </div>
 </footer>
 </body>
